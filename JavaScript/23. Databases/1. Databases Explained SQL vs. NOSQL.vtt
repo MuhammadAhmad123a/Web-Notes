@@ -1,0 +1,703 @@
+WEBVTT
+
+00:00.550 --> 00:01.210
+All right guys.
+
+00:01.240 --> 00:07.870
+So we're going to get started learning about databases and how to actually persist or use a data.
+
+00:07.870 --> 00:09.730
+Now here's the problem.
+
+00:09.730 --> 00:16.540
+Previously in the last challenge when we built our blog web site you would have noticed that every single
+
+00:16.540 --> 00:19.500
+time that you've restarted your server.
+
+00:19.540 --> 00:27.190
+So for example at the moment I'm using node update just to run my Abdulle jazz file and my server is
+
+00:27.190 --> 00:28.740
+running on port 3000.
+
+00:28.840 --> 00:38.680
+But if I use Control-C to stop running and then I rerun my app now if I head back to my blog the post
+
+00:38.680 --> 00:44.000
+that I added previously will now be removed as soon as I hit refresh.
+
+00:44.210 --> 00:51.940
+And the reason behind this is because inside apt Jesus were using an array to store all of that post
+
+00:52.000 --> 00:52.880
+data.
+
+00:53.110 --> 00:59.130
+And we don't have any way of persistently storing the data that the user generates.
+
+00:59.170 --> 01:04.650
+For example new blog posts or new comments or new users sign ups.
+
+01:04.780 --> 01:09.010
+Now it's not just our Web site that's generating data.
+
+01:09.040 --> 01:16.150
+If you take a look at insert lifestyle's dot com you can see just how much data is being generated as
+
+01:16.150 --> 01:17.380
+we speak.
+
+01:17.380 --> 01:23.620
+If you look at the total number of Google searches today not even you know of all time you can see how
+
+01:23.620 --> 01:28.970
+quickly that number moves and how many emails are sent or how many blog posts were written today.
+
+01:29.290 --> 01:36.370
+It's an absolutely huge amount of data that's being generated all across the Internet and they all need
+
+01:36.370 --> 01:38.480
+to be saved somewhere.
+
+01:38.560 --> 01:41.070
+That's why we need to know about databases.
+
+01:41.320 --> 01:46.530
+Once you realize the need for databases the next step is actually choosing one.
+
+01:46.600 --> 01:52.840
+And if you look on the Internet this is actually not an easy task because there are so many databases
+
+01:52.870 --> 01:58.930
+out there even if you narrow it down to the databases that work well with no data is you still left
+
+01:58.930 --> 02:06.360
+with a lot of choice and very frequently come across blog posts have a title that something like this.
+
+02:06.370 --> 02:14.450
+Cassandra versus Mongar D-B versus couch D-B vs and it's just crazy the amount of choice that you have.
+
+02:14.620 --> 02:19.660
+But there's a reason for that because depending on the type of data you're looking to store and the
+
+02:19.660 --> 02:26.440
+structure of your data you might favor one of these databases over another but no matter what choice
+
+02:26.440 --> 02:27.100
+you make.
+
+02:27.100 --> 02:33.270
+The main difference between databases is whether if they are sequel based or if they are no.
+
+02:33.280 --> 02:35.120
+Q well-based now.
+
+02:35.230 --> 02:43.480
+Q Well or sequel stands for structured query language and it's a really old school piece of technology
+
+02:43.510 --> 02:47.670
+that businesses have been using for many many years now.
+
+02:47.680 --> 02:48.180
+No.
+
+02:48.190 --> 02:55.450
+Cuil stands for not only structured query language so they can actually be any format as long as it's
+
+02:55.450 --> 03:00.960
+not as well although most of them follow a very similar structure.
+
+03:00.970 --> 03:05.380
+Those are the two big families of databases that you get to choose from.
+
+03:05.470 --> 03:10.480
+And we're going to talk about the differences between each and I'm going to show you how to work with
+
+03:10.480 --> 03:12.600
+both of these types of databases.
+
+03:13.120 --> 03:19.660
+If you do a quick google you will find that there are so many different types of databases that are
+
+03:19.660 --> 03:23.500
+categorized as equal databases or no as well.
+
+03:23.500 --> 03:29.760
+But the top four most popular databases at least when we're working with no data is for the sequel family
+
+03:29.770 --> 03:34.140
+that's my ask you will and postscripts and for no as well.
+
+03:34.180 --> 03:41.230
+It's going to be Mongo D-B and read us now some of these databases you might have already heard of but
+
+03:41.560 --> 03:47.890
+a lot of people are confused as to when to use which And what are the similarities and differences and
+
+03:47.890 --> 03:49.720
+how do you choose anyways.
+
+03:50.930 --> 03:55.120
+So let's talk about what are the differences between sequel and Noah.
+
+03:55.130 --> 04:02.840
+Q Well the first difference is in their structure so let's say that you're starting a new business and
+
+04:02.870 --> 04:08.270
+you've decided to start selling stationery now because you're shipping a lot of your product to your
+
+04:08.270 --> 04:09.120
+customers.
+
+04:09.290 --> 04:12.850
+You need to keep a record of their names and addresses.
+
+04:12.980 --> 04:15.300
+So you create a database for that.
+
+04:15.500 --> 04:21.800
+And if you used to excel and creating tables then you'll find that a sequel database will serve you
+
+04:21.800 --> 04:23.510
+quite well.
+
+04:23.510 --> 04:27.310
+A sequel database will group your data into tables.
+
+04:27.380 --> 04:33.490
+So this is how our customer data would look if we chose a sequel database such as my ask you will or
+
+04:33.500 --> 04:41.300
+postscripts but sometimes you might find that sequel databases can be extremely inflexible.
+
+04:41.330 --> 04:48.740
+For example let's say that in your shop you have me as a customer and I'm one of those annoying customers
+
+04:48.830 --> 04:52.100
+who don't really like having mail sent to my address.
+
+04:52.100 --> 04:54.840
+So I say to you you know what.
+
+04:54.890 --> 04:57.500
+Why don't you deliver to my address.
+
+04:57.530 --> 05:03.890
+But for all of the communications I want you to just e-mail me because we are after all in the 21st
+
+05:03.890 --> 05:05.250
+century right.
+
+05:05.270 --> 05:12.500
+If you had a sequel table then you have a bit of a problem because that doesn't really fit with your
+
+05:12.500 --> 05:13.480
+table.
+
+05:13.490 --> 05:17.910
+You don't have a pre-specified email column to fit that data.
+
+05:17.910 --> 05:22.120
+And none of your existing data have an e-mail entry.
+
+05:22.550 --> 05:27.770
+And what if you had a customer who didn't want to give you any information at all.
+
+05:27.770 --> 05:33.290
+They didn't want to give you their address or their e-mail and they'd rather protect their privacy.
+
+05:33.320 --> 05:40.700
+Well then you kind of have a gap in your table and it ends up looking very very irregular and that doesn't
+
+05:40.700 --> 05:44.050
+sit very well with sequel databases.
+
+05:44.190 --> 05:53.010
+So if you chose a sequel database what it will try to do is it will try to square off the table so you
+
+05:53.010 --> 05:55.300
+can add a new column called e-mail.
+
+05:55.530 --> 06:02.060
+But for all the places where there's missing information it will automatically insert a null.
+
+06:02.190 --> 06:08.880
+And as we learned from previous programming lessons gnoll can be very dangerous especially if you're
+
+06:08.880 --> 06:14.070
+not expecting something to be null or not have any data.
+
+06:14.100 --> 06:19.110
+For example if you decide to send out your marketing e-mails a lot of those e-mails are going to be
+
+06:19.110 --> 06:28.400
+going to an e-mail address that's called no rain but if you had a no ask well-based database such as
+
+06:28.490 --> 06:32.210
+Mongo D-B then this wouldn't be a problem at all.
+
+06:33.120 --> 06:38.870
+If you were working with Monga the same data would be represented as based on objects.
+
+06:39.150 --> 06:43.750
+So you would have Kieve Aviv has such as First Name Last Name Address.
+
+06:43.920 --> 06:50.730
+And if all one of those documents you had an extra key value pair such as email then it doesn't affect
+
+06:50.790 --> 06:57.630
+any of the other data records and none of these records or documents actually have to be the same shape
+
+06:57.960 --> 06:59.730
+or follow the same structure.
+
+07:00.960 --> 07:06.930
+If you're old enough to remember that ad with PC Guy and Mac guy is kind of the same with sequel and
+
+07:06.930 --> 07:14.910
+no as you well know as well databases tend to be flashier new with modern syntax and modern methods
+
+07:15.270 --> 07:20.460
+but sequel database is old and reliable and it likes structure.
+
+07:20.550 --> 07:26.550
+Everybody knows that guy who they work with in the office who really likes structure and for everybody
+
+07:26.550 --> 07:32.680
+to follow rules and to specify a structure ahead of time and just stick to it.
+
+07:32.970 --> 07:39.420
+But with no bascule and especially Mongo D-B you're more flexible you're able to adapt a maneuver around
+
+07:39.420 --> 07:43.070
+the situation as and when things come up.
+
+07:43.110 --> 07:48.480
+So it's really helpful for startups where your data structure is not predefined.
+
+07:48.510 --> 07:53.190
+You know one day you could be selling toasters and tomorrow you could be pivoting to giving massages
+
+07:53.480 --> 07:59.950
+then a no s your database can remain flexible and you're not bound to a particular structure.
+
+08:01.140 --> 08:09.300
+But even though the NO ask you all guy is flashy and he's new and he's hip you know I'm sure you've
+
+08:09.300 --> 08:12.330
+met people like this and I've met a lot of notes.
+
+08:12.330 --> 08:20.340
+Q All guys in my time and what they're not good at are relationships and this is another big difference
+
+08:20.400 --> 08:21.670
+between c cool.
+
+08:21.690 --> 08:27.440
+A.S. Kule databases in a way that they implement relationships between your data.
+
+08:27.750 --> 08:30.760
+Although Previously we were comparing between sequel.
+
+08:30.770 --> 08:38.930
+A.S. CULE databases you also often hear people refer to them as relational and non-relational databases.
+
+08:39.150 --> 08:45.810
+And this is the highlight that sequel databases of really good at establishing relationships between
+
+08:45.870 --> 08:50.040
+your data coming back to our shop.
+
+08:50.060 --> 08:54.990
+Let's say that you wanted to keep a record of all of the orders that are being made.
+
+08:55.040 --> 09:00.190
+So you want to know what's the name of the customer who bought it what's their address.
+
+09:00.260 --> 09:01.490
+What did they buy.
+
+09:01.490 --> 09:03.270
+What was the price of the product.
+
+09:03.290 --> 09:05.300
+How many of it did they buy.
+
+09:05.300 --> 09:06.320
+All of these things.
+
+09:06.380 --> 09:13.520
+But it doesn't really make sense to cram it all into the same table especially if that same customer
+
+09:13.550 --> 09:16.970
+comes back and buys a different product.
+
+09:17.150 --> 09:24.170
+Then you have a lot of repeat data and it doesn't make any sense to cram everything into the same table.
+
+09:24.170 --> 09:24.750
+Right.
+
+09:25.070 --> 09:31.310
+Using a sequel database what you would do is you would group related pieces of data into individual
+
+09:31.310 --> 09:32.090
+tables.
+
+09:32.420 --> 09:39.650
+So you might have a customer table a Products table and an order table and in your database you can
+
+09:39.650 --> 09:43.430
+specify a relationship between the tables.
+
+09:43.430 --> 09:51.230
+So for example you could link up the Customers table through the customer ID to the orders table and
+
+09:51.230 --> 09:56.080
+you could link the products table to the products ID in the Orders table.
+
+09:56.180 --> 10:01.960
+If we had some real data for example we have a database of all of our customers and where they live.
+
+10:02.180 --> 10:06.430
+We have a table of our products and what their prices are.
+
+10:06.650 --> 10:12.230
+And we also have this Orders table which links up the data in the different tables.
+
+10:12.590 --> 10:19.670
+Let's say we have an order with Order ID one of very first order we can have a column where we specify
+
+10:19.670 --> 10:21.310
+the customer ID.
+
+10:21.500 --> 10:25.480
+So in this case is linked to the customer that has an ID of two.
+
+10:25.580 --> 10:28.240
+So that is of course me.
+
+10:28.250 --> 10:28.640
+Right.
+
+10:28.640 --> 10:35.130
+CUSTOMER 2 is Angela you now the next column saves the Product ID.
+
+10:35.300 --> 10:44.990
+So this links to the Products table with the product that has an ID of two by using this format we can
+
+10:44.990 --> 10:49.400
+join the tables together at a later point if need be.
+
+10:49.700 --> 10:55.910
+So we can know for each order which customer bought in and which products were bought.
+
+10:57.480 --> 11:01.800
+Now using a NO ask all database such as Mongo D-B.
+
+11:01.950 --> 11:05.180
+You have to rethink how you organize your data.
+
+11:05.340 --> 11:10.450
+In this case we might have a document where we have an order ID.
+
+11:10.800 --> 11:19.050
+We have a key value pair that's a customer with customer has the key and their details as the value
+
+11:19.920 --> 11:24.190
+and also the products as it's own embedded objects.
+
+11:24.540 --> 11:30.180
+So now we have embedded objects in order to represent the entire order.
+
+11:30.270 --> 11:33.340
+And this might lead to some data repetition.
+
+11:34.250 --> 11:38.650
+So you could also organize your data in different documents.
+
+11:38.660 --> 11:39.230
+Right.
+
+11:39.260 --> 11:47.180
+So say you have three objects one has details of the Order one has details of the customer and one has
+
+11:47.180 --> 11:51.280
+details of the product and you can also link them together.
+
+11:51.600 --> 11:55.650
+Although a little bit more clumsily through using references.
+
+11:55.670 --> 12:03.650
+So for example in the order document you can see the customer references the document with a person
+
+12:03.650 --> 12:10.900
+Id of person one and the product references a product with the ID of product one.
+
+12:10.910 --> 12:18.380
+So this is how you might implement your relationships in a new S kewl database such as Mongar DP but
+
+12:18.470 --> 12:24.080
+it's a little bit clumsy and when you start searching this database that structured like this it might
+
+12:24.170 --> 12:29.830
+not be quite as efficient or fast as a sequel database.
+
+12:30.060 --> 12:37.220
+So depending on the structure of your data you will want to choose a sequel or no rescue or database.
+
+12:37.440 --> 12:45.330
+And you should know very often you will see on the Internet people saying Mongo D-B is the best database
+
+12:45.420 --> 12:46.810
+out there ever.
+
+12:47.010 --> 12:52.810
+And other people will say don't ever use Mongar D-B it's the worst or you know my ass.
+
+12:52.810 --> 12:55.670
+Q Well is the best thing since sliced bread.
+
+12:55.710 --> 12:57.670
+Don't believe what people say.
+
+12:57.750 --> 13:03.370
+Instead you have to know what your particular situation is to choose the right database.
+
+13:03.660 --> 13:11.100
+If you need to store data such as orders customer details products inventory things that have lots of
+
+13:11.100 --> 13:16.650
+relationships between each other then you might be better off choosing a sequel database such as my
+
+13:16.650 --> 13:17.770
+ask you.
+
+13:17.850 --> 13:24.230
+However if you have a website where you have something that's more of a one to many kind of relationship
+
+13:24.240 --> 13:31.440
+like here for example say if we were making a database for Instagram then we might have a user name
+
+13:31.500 --> 13:36.000
+a first name last name and then we might have a post array.
+
+13:36.090 --> 13:43.230
+And so this is the array of objects and those objects each have an image you Arel description and the
+
+13:43.230 --> 13:45.280
+date that they were created.
+
+13:45.360 --> 13:53.100
+In this case where you have a single user generating lots of content creating a one user too many posts
+
+13:53.220 --> 14:01.350
+relationship then this is much easier to map out using something like Mongo D-B the last difference
+
+14:01.350 --> 14:07.970
+I want to talk about is scalability despite it being relatively weak on the relationship front.
+
+14:08.010 --> 14:14.060
+One of the reasons why you might use no as well of a sequel is because of scalability.
+
+14:14.370 --> 14:20.720
+This is a real strong point of no well databases and this is a reason why you might choose a new Ice
+
+14:20.720 --> 14:23.650
+Cube database over a sequel database.
+
+14:23.820 --> 14:30.630
+If you've ever had an Excel spreadsheet that has lots and lots of rows so say ten thousand plus rows
+
+14:31.080 --> 14:33.050
+then you might have experienced this.
+
+14:33.120 --> 14:35.770
+It gets slower and slower.
+
+14:35.790 --> 14:42.630
+The more rows of data you add until a point where the fall is so big that your computer can no longer
+
+14:42.630 --> 14:49.170
+handle it and you might get a pop up saying Excel cannot complete this task with available resources.
+
+14:49.170 --> 14:52.240
+Choose less data or close other applications.
+
+14:52.320 --> 14:59.430
+It's saying that you need a more powerful computer if you are running your sequel database on your laptop
+
+14:59.430 --> 15:00.400
+for example.
+
+15:00.480 --> 15:06.900
+Then you might just get a more powerful computer say a desktop computer with higher specs.
+
+15:06.960 --> 15:07.390
+Right.
+
+15:07.530 --> 15:13.830
+And once that start slowing down and struggling then you might just go for a mainframe and buy the biggest
+
+15:13.830 --> 15:15.930
+computer that you can find.
+
+15:15.960 --> 15:22.020
+But as we saw previously there are some companies that have so much data.
+
+15:22.200 --> 15:29.430
+For example the number of Web sites that Google has to index and be able to serve up in searches is
+
+15:29.430 --> 15:37.470
+in the Brazilians and they have so much data that even the fastest computer will slow down and struggle
+
+15:38.220 --> 15:42.770
+managing large amounts of data using sequel based databases.
+
+15:42.840 --> 15:47.210
+It's kind of like scaling a building vertically as soon as you have more data.
+
+15:47.220 --> 15:53.820
+You just add floors onto your building until eventually you end up with the skyscraper of a building.
+
+15:53.880 --> 15:58.020
+It might just become unstable and end up collapsing on you.
+
+15:58.290 --> 16:05.730
+And it's also very costly to scale vertically like this now because the way that Mongar D-B organizes
+
+16:05.730 --> 16:13.650
+its data into smaller chunks or smaller documents of data where essentially each record or each row
+
+16:13.650 --> 16:17.510
+in the table is represented as a J-Zone object.
+
+16:17.700 --> 16:25.280
+Then in this case instead of buying larger and larger computers it allows for a distributed system.
+
+16:25.410 --> 16:30.350
+So your database can be distributed amongst lots and lots of different computers.
+
+16:30.460 --> 16:37.230
+And this is equivalent to building low but sturdy buildings and you scale horizontally so you build
+
+16:37.230 --> 16:43.160
+lots and lots of those and all the data is distributed and spread out amongst all of them.
+
+16:44.210 --> 16:50.810
+So if we were to compare the most popular school database which is minuscule against the most popular
+
+16:51.230 --> 16:58.790
+no bascule database which is Mongo D-B then these are some of the pros and cons of each sequel databases
+
+16:59.000 --> 17:02.040
+have been around for ages.
+
+17:02.210 --> 17:05.300
+That means that the technology is more mature.
+
+17:05.570 --> 17:11.390
+But also if you come across anything that school related on the internet it all looks like it was created
+
+17:11.420 --> 17:13.110
+in the 90s.
+
+17:13.490 --> 17:21.260
+Mongo D-B is shiny and new but as we're finding out some of the things are not really ironed out that
+
+17:21.260 --> 17:27.460
+might mean more frequent changes in the technology as they find new problems and address them.
+
+17:27.650 --> 17:34.430
+The next difference is that sequel databases run on a table structure as we've seen before whereas Mungo
+
+17:34.430 --> 17:37.290
+D-B works with a document structure.
+
+17:37.490 --> 17:43.190
+So this way individual rows of data can be each represented as a document.
+
+17:43.310 --> 17:47.180
+And this leads us onto the next point with a sequel database.
+
+17:47.180 --> 17:51.770
+You should have a structure in mind before you create your database.
+
+17:51.920 --> 17:55.550
+And this in database lingo is called a schema.
+
+17:55.580 --> 18:01.450
+So these are the names of your columns and the names of your tables and how many columns you might need
+
+18:02.120 --> 18:04.900
+and sequel databases work really well.
+
+18:04.940 --> 18:10.940
+If you have a fixed schema so if you already know ahead of time what your customer database will look
+
+18:10.940 --> 18:13.230
+like what your orders database will look like.
+
+18:13.400 --> 18:15.910
+And you know that they're not likely to change.
+
+18:16.250 --> 18:22.040
+Whereas with somebody like Mongo D.B and other no skewl databases they're more flexible to changes.
+
+18:22.220 --> 18:27.170
+So if you're a young startup and you haven't really figured out how you're going to organize your data
+
+18:27.470 --> 18:32.960
+or what kind of data you're going to store then it might be a better idea to choose this particular
+
+18:32.960 --> 18:34.220
+type of database.
+
+18:34.580 --> 18:40.640
+But as we saw earlier on if you need to store data with a lot of relationships between the data then
+
+18:40.760 --> 18:46.320
+a sequel database will work out to be much faster when you query through your database.
+
+18:46.670 --> 18:53.240
+Whereas with something like Mongo D-B it can manage simple relationships but it's really not great when
+
+18:53.240 --> 19:00.080
+those relationships start to get complex and when you have data in Mongo D-B that's linked up with complex
+
+19:00.080 --> 19:01.090
+relationships.
+
+19:01.250 --> 19:08.470
+The speed and efficiency can quickly go down but last point as we mentioned earlier on is that sequel
+
+19:08.470 --> 19:13.300
+databases tend to scale vertically so you tend to need more infrastructure.
+
+19:13.510 --> 19:14.930
+It's more costly.
+
+19:15.100 --> 19:21.160
+Whereas with Mangu D.B and other no Eskew all databases they can scale horizontally and allows for a
+
+19:21.160 --> 19:28.430
+more distributed structure which makes it much easier to scale.
+
+19:28.440 --> 19:34.320
+So this is your introduction for working with databases and especially looking at the differences between
+
+19:34.320 --> 19:36.410
+the two major families sequel.
+
+19:36.460 --> 19:42.430
+A.S. all databases now in the coming lessons we're going to explore in a more hands on way.
+
+19:42.660 --> 19:48.930
+The differences between sequel and new as well so that you can try it out and see for yourself how they
+
+19:48.930 --> 19:54.640
+each work and experience some of the frustrations as well as the benefits of each.
+
+19:54.810 --> 19:57.420
+So all of that the more I'll see on the next lesson.
