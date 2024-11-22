@@ -1,0 +1,310 @@
+WEBVTT
+
+00:00.220 --> 00:00.580
+Right.
+
+00:00.630 --> 00:06.810
+So now that we've looked at a lot of the technologies that used in Front-End web development and we've
+
+00:06.810 --> 00:14.640
+designed and develop Web sites using a TMLC SS javascript bootstrap Jay queery in order to become a
+
+00:14.640 --> 00:18.880
+full stack web developer we now to learn about the back end.
+
+00:19.260 --> 00:21.560
+Now what exactly is a full stack developer.
+
+00:21.570 --> 00:27.890
+Because this is a term that's brandished about a lot and especially in the context of development jobs.
+
+00:28.080 --> 00:35.790
+So according to Linked In these are the hardest jobs for 2018 and squarely on that list is a full stack
+
+00:35.790 --> 00:36.710
+developer.
+
+00:36.900 --> 00:39.820
+So what exactly is a full stack developer.
+
+00:40.170 --> 00:45.920
+Well a full stack basically is just front end development plus back in development.
+
+00:45.960 --> 00:51.690
+And once you're familiar with both then it's this flexibility of working with the front and back and
+
+00:52.110 --> 00:55.510
+that makes you so much more desirable as a developer.
+
+00:55.560 --> 01:01.830
+Up till now we've only been interacting with Front-End technologies we've learnt about HCM elsea SS
+
+01:01.950 --> 01:08.610
+and javascript as well as Jay Aquarion Bootstrap which all enable us to design our website and also
+
+01:08.640 --> 01:13.040
+allow for user interaction on the client side in the browser for example.
+
+01:13.230 --> 01:18.930
+But now what we're going to look at the back end we're going to learn about no Jesus and other technologies
+
+01:19.230 --> 01:25.940
+that enable us to interact with databases or have business logic on a server and a whole lot more.
+
+01:26.400 --> 01:33.090
+Now what exactly is the back end anyways for some of you out there who are a bit more mature like myself.
+
+01:33.090 --> 01:35.730
+Don't worry it's not something that's rude.
+
+01:35.730 --> 01:42.270
+Instead it consists of things such as a server which will serve up your files your age the amount of
+
+01:42.270 --> 01:49.440
+success and your javascript a database which can store you use a data such as their log ins and passwords
+
+01:50.130 --> 01:51.830
+as well as your applications.
+
+01:51.870 --> 01:54.310
+So this is where you create your business logic.
+
+01:54.330 --> 01:57.290
+You determine how your web applications work.
+
+01:57.300 --> 02:03.830
+For example things such as calculating flight prices or making payments that sort of stuff.
+
+02:03.870 --> 02:07.710
+So let's look at a real life example let's take a look at the event.
+
+02:07.710 --> 02:09.900
+Bright web application.
+
+02:10.150 --> 02:14.770
+And it's a web application because it doesn't just display information.
+
+02:14.790 --> 02:22.200
+It also has functionality on the backend that enables it to do something concrete such as find events
+
+02:22.260 --> 02:24.290
+or allow you to book events.
+
+02:24.480 --> 02:29.760
+So let's say we've gone to event bright and we look at all the events that are happening today and I
+
+02:29.760 --> 02:32.910
+find something that is the Hogarth beer and music festival.
+
+02:32.940 --> 02:35.010
+Well that sounds right up my alley.
+
+02:35.010 --> 02:39.290
+So let's go ahead and register and book a ticket.
+
+02:39.300 --> 02:42.520
+So here I enter my name and I buy a ticket.
+
+02:43.140 --> 02:49.770
+Well now that information that consists of my name how many tickets I bought and my registration details
+
+02:49.770 --> 02:54.270
+such as my e-mail gets saved on the Web site's databases.
+
+02:54.540 --> 03:00.510
+And for simplicity's sake you can just imagine these databases as these giant Excel spreadsheets living
+
+03:00.510 --> 03:06.880
+somewhere and all of my data that I enter gets saved onto these spreadsheets.
+
+03:06.930 --> 03:13.190
+And that means that when I come back at a later date I'm able to look back on to event bright and it
+
+03:13.190 --> 03:15.990
+will be able to retrieve it from its database.
+
+03:15.990 --> 03:18.910
+All of the data that is associated with my account.
+
+03:19.140 --> 03:25.710
+So for example it could retrieve my ticket to the Hogarth beer and music festival now a really great
+
+03:25.710 --> 03:30.660
+analogy for a full stack web application it's kind of like a restaurant.
+
+03:30.660 --> 03:32.060
+So there is a front of house.
+
+03:32.070 --> 03:36.450
+This is the main restaurant where your clients will sit down and have dinner.
+
+03:36.750 --> 03:41.280
+But then there's also the kitchen right which is where the cooking is mostly happening.
+
+03:41.400 --> 03:46.530
+And finally there's also the larder which is where you store all of your ingredients and everything
+
+03:46.530 --> 03:49.050
+you need to make the food.
+
+03:49.260 --> 03:54.320
+In this analogy or FRONT OF HOUSE restaurant is basically the client side.
+
+03:54.330 --> 03:56.750
+This is what the user sees in the browser.
+
+03:57.000 --> 04:02.310
+They're able to interact with the web site using javascript and they're able to see the information
+
+04:02.310 --> 04:05.620
+that's being displayed using ational and CSSA.
+
+04:05.790 --> 04:13.320
+Now a little bit further back on the back end we've got the kitchen and this is analogous to our server.
+
+04:13.350 --> 04:18.150
+This is basically the place where all of our dishes get served from.
+
+04:18.150 --> 04:25.110
+So when a restaurant goer ask for a Philly steak then that order gets sent to the server and the server
+
+04:25.140 --> 04:29.910
+should send back what it is that the client wanted which is the actual steak.
+
+04:30.240 --> 04:34.820
+And finally the larder where all the ingredients are stored is of course the database.
+
+04:34.830 --> 04:39.410
+This is where all of our user data or event data are ticket data.
+
+04:39.540 --> 04:43.440
+All of the data that makes our website work is stored.
+
+04:43.470 --> 04:48.720
+So this is where the divide between the front end and the back end happens it's between the front of
+
+04:48.720 --> 04:52.320
+the House and the restaurant and the kitchens and larder.
+
+04:52.380 --> 04:57.360
+Now just as with restaurants you don't actually have to create everything in the kitchen.
+
+04:57.390 --> 04:57.910
+Right.
+
+04:57.930 --> 05:03.450
+You could have a restaurant where you make all of the dishes in front of the client and you just do
+
+05:03.450 --> 05:08.850
+it on a table you bring all of the ingredients there and you make it right there for them.
+
+05:08.850 --> 05:15.540
+Now the downsides in this case is that firstly your secret recipe that's been passed down over generations
+
+05:15.600 --> 05:18.790
+from your great grandma to your grandma to your mother to your self.
+
+05:18.930 --> 05:21.580
+Well that's kind of exposed right.
+
+05:21.600 --> 05:24.430
+Anybody would be able to see what it is that you're doing.
+
+05:24.540 --> 05:26.140
+And they would be able to replicate it.
+
+05:26.310 --> 05:29.350
+And this is the same from the business logic of your web site.
+
+05:29.520 --> 05:35.910
+If you had something that you wanted to keep secret such as your API keys or how you implement your
+
+05:35.910 --> 05:41.590
+particular application then you don't want that to be visible every time somebody loads up a Web site.
+
+05:41.670 --> 05:48.660
+Brian and the other problem is that it can be really really time consuming to make the dish in front
+
+05:48.720 --> 05:53.280
+of the client in the restaurant because you would have to bring all of the ingredients.
+
+05:53.300 --> 06:00.660
+You would have to make it one by one in small batches and in websites that translates to a long loading
+
+06:00.660 --> 06:01.380
+time.
+
+06:01.380 --> 06:08.250
+So if you are transporting a lot of code over to the browser where it has to be executed on the browser
+
+06:08.450 --> 06:12.520
+it usually takes a lot longer than if it was done on the backend.
+
+06:12.570 --> 06:19.140
+So the alternative is we take our ingredients from our database so our server interacts with the database
+
+06:19.560 --> 06:25.040
+then we execute some code on our server and we create the application or the dish.
+
+06:25.050 --> 06:28.820
+In this case which then gets served to the client side.
+
+06:28.860 --> 06:31.950
+So that means we don't have to transport any of the ingredients.
+
+06:31.950 --> 06:37.740
+We don't have to transport a lot of code which will vastly speed up your website and also keep your
+
+06:37.740 --> 06:40.390
+business logic hidden on the back.
+
+06:40.390 --> 06:46.980
+And there's a lot of technologies that are commonly used for this purpose and these include ph P ruby
+
+06:46.980 --> 06:51.040
+java no Jirus amongst many many others.
+
+06:51.110 --> 06:57.840
+Now in addition there are frameworks such as cake BHP or Ruby on Rails or spring Express and these are
+
+06:57.840 --> 07:03.060
+things that will speed up development using the particular back in technology you chose.
+
+07:03.060 --> 07:08.610
+So a common one you would have heard is maybe Ruby and Ruby on Rails and the main job these frameworks
+
+07:08.700 --> 07:13.450
+is to simply reduce the amount of repetitive stuff that a developer has to do.
+
+07:13.680 --> 07:18.930
+And just like how you don't want to write the email boilerplate code out every single time you create
+
+07:18.960 --> 07:20.380
+an additional page.
+
+07:20.380 --> 07:26.280
+Then in the same way a lot of these frameworks such as Ruby on Rails or express they make a developer's
+
+07:26.280 --> 07:32.430
+life much much easier by cutting down some of the grunt work and saving you a lot of time in the coming
+
+07:32.430 --> 07:36.490
+lessons were going to be delving deep into a lot of this kind of stuff.
+
+07:36.600 --> 07:41.220
+And we're going to be learning about no just as well as the most common framework that's used with it
+
+07:41.250 --> 07:46.930
+which is express and the best part of all is that we don't have to learn a brand new programming language
+
+07:46.930 --> 07:50.540
+and do it because no geus runs on Javascript.
+
+07:50.760 --> 07:56.310
+And this is why I know Jeff is one of the most popular back in languages currently because it runs on
+
+07:56.310 --> 07:57.500
+Javascript.
+
+07:57.930 --> 08:02.100
+So for all of that and more on notice I'll see you on the next lesson.
