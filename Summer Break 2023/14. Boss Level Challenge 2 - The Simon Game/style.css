@@ -1,0 +1,48 @@
+/*TAG SELECTORS*/
+body{
+  background-color: #011F3F;
+  text-align: center;
+}
+h1{
+  font-family: 'Press Start 2P', cursive;
+  color: #FEF2BF;/*white*/
+  font-size: 3rem;
+  margin: 5%;
+}
+table{
+  margin: auto;
+}
+container{
+  display: block;
+  width: 50%;
+  margin: auto;
+}
+/*CLASS SELECTORS*/
+.btn{
+  width: 200px;
+  height: 200px;
+  border-color: black;
+  border: 10px solid black;
+  border-radius: 40px;
+  margin: 25px;
+}
+.green{
+  background-color: green;
+}
+.red{
+  background-color: red;
+}
+.yellow{
+  background-color: yellow;
+}
+.blue{
+  background-color: blue;
+}
+.game-over{
+  background-color: red;
+  opacity: 0.8;
+}
+.pressed{
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}
