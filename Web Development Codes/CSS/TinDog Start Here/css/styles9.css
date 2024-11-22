@@ -1,0 +1,187 @@
+/************************ TAG SSELECTORS **********************/
+/* These are global tags because they change the whole body */
+
+h1,h2,h3,h4,h5,h6{
+  font-family: "Montserrat-Bold";
+}
+
+h2{
+  font-size: 3rem;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+p{
+  color: #8f8f8f;
+}
+body{
+  font-family: "Monserrat";
+  text-align: center;
+}
+
+
+/************************ CLASS SSELECTORS **********************/
+.container-fluid{
+  padding: 7% 15%;
+}
+
+/* Headings */
+.big-heading{
+  font-family: "Montserrat-Black";
+  font-size: 3.5rem;
+  line-height: 1.5;
+  font-weight: bold;
+}
+.section-heading{
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+/* Navigatioon Bar */
+.navbar{
+  padding: 0 0 4.5rem; /* 0 on top 0 on left and right and 4.5rem on bottom */
+}
+.navbar-brand{
+  font-family: "Ubuntu"; /* tindog t style changes */
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.nav-item{
+  padding: 0 18px;
+}
+.nav-link{
+  font-size: 1.2rem;
+  font-family: "Montserrat-Light";
+}
+
+/* Download Buttons */
+.download-button{
+  margin: 5% 3% 5% 0; /* top=5%, right=3%, bottom=5%, left=0 */
+}
+/* Title Image */
+.title-image{
+  width: 60%;
+  transform: rotate(25deg); /* Rotate image to style */
+  right: 30%;     /* or margin-right: 30%; */
+  position: absolute;
+  /* z-index: -1; */
+}
+
+.feature-box{
+  padding: 4.5%;
+}
+
+.feature-title{
+  font-size: 1.5rem;
+}
+.icon{
+  color: #ef8172;
+  margin-bottom: 1rem;
+}
+.icon:hover{
+  color: #ff4c68;
+}
+
+/* Testimonial Section */
+
+.testimonial-image{
+  width: 10%;
+  border-radius: 100%;
+  margin: 20px;
+}
+.testimonial-text{
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+/* Press Section */
+.press-logo{
+  width: 15%;
+  margin: 20px 20px 50px;
+}
+/* Carousel Section */
+.carousel-item{
+  padding: 7% 50px;
+  height: 500px;
+}
+
+/* Pricing Section */
+.pricing-column{
+  padding: 3% 2%;
+}
+.price-text{
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+/* cta Section */
+.cta-heading{
+  font-family: "Montserrat-Black";
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+
+/* Footer Sectin */
+.social-icon{
+  margin: 20px 10px;
+}
+
+/* Sectioons */
+.colored-section{
+  background-color: #ff4c68;
+  color:#fff; /* white = #fff */
+}
+
+.white-section{
+  background-color: #fff;
+}
+
+
+/************************ ID SSELECTORS ************************/
+
+/* Title section padding through container-fluid */
+#title .container-fluid{
+  padding: 3% 15% 7%;
+  text-align: left;
+}
+
+
+/* Features Section */
+#features{
+  /* background-color: #fff; //white this is moved in white sectioon*/
+  position: relative; /* This position is to move image z index  */
+  /* z-index: 1; // This part hides some part of image behind features section */ /* Postion is moved as required. See flow chart to learn this. */
+}
+
+/* Testimonial Section */
+#testimonials{
+  background-color: #ef8172;
+
+}
+/* Press Section */
+#press{
+  background-color: #ef8172;
+  padding-bottom: 3%;
+
+}
+
+/* Pricing Section */
+#pricing{
+  padding: 100px;
+}
+
+/* Call To Action Section */
+
+/* Footer Sectin */
+#footer{
+}
+
+/* Media Query Breakpoints */
+@media (max-width:1028px) { /* If width is less or equal to 1028px then this property holds */
+  #title{
+  }
+.title-image{
+  position: static;
+  transform: rotate(0);
+}
+}

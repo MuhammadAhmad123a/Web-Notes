@@ -1,0 +1,8 @@
+.bg{
+
+  background-image: url(../images/page1.jpg);
+
+  background-size: cover;
+width: 100%;
+height: 500px;
+}

@@ -1,0 +1,30 @@
+/************************* CLASS SELECTORS ***********************/
+.red {
+  background-color: red;
+  height: 100px;
+  width: 100px;
+  position: relative;
+  /* top:50px; */
+  /*right:50px;*/
+  /* bottom: 50px;/*
+
+  /*left: 50px;*/
+  display: inline-block;
+  /* to move block in line instead of top to bottom*/
+}
+
+.blue {
+  background-color: blue;
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  position: relative;
+  /*  right: 30px; */
+}
+
+.yellow {
+  background-color: yellow;
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+}

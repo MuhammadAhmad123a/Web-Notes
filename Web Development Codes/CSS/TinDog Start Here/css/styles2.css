@@ -1,0 +1,27 @@
+/************************ TAG SSELECTORS **********************/
+h1{
+  font-family: "Montserrat-Black";
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+
+
+
+
+
+
+/************************ CLASS SSELECTORS **********************/
+.container-fluid{
+  padding: 3% 15%;
+}
+
+
+
+
+
+
+/************************ ID SSELECTORS ************************/
+#title{
+  background-color: #ff4c68;
+}

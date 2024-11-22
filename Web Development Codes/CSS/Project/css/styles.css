@@ -1,0 +1,187 @@
+
+h5{
+  text-align: center;
+  font-size: 1.5rem;
+  padding-bottom: 3%;
+  width: 80%;
+
+  margin-left: 10%;
+}
+hr{
+  border-color: #fff;
+  width: 74%;
+}
+#title{
+  background-color: #72FFFF;
+  margin-top: 30px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+
+}
+.title-text{
+  text-align: center;
+  font-weight: bold;
+}
+.title-tag{
+  font-weight: bold;
+  text-align: right;
+  font-size: 1.2rem;
+}
+.title-image{
+  width: 90%;
+  padding: 5% 5% 0 20%;
+}
+.title-left{
+  padding: 10px 10% ;
+}
+.nav-item{
+  padding: 0 5%;
+  font-size: 1rem;
+}
+.nav-item:hover{
+  color: red;
+  text-decoration: underline 2px;
+}
+.title-number{
+  font-size: 1.3rem;
+}
+
+/* Flavour Section */
+#flavour{
+  background-color: #FFF89C;
+  padding: 5% 0;
+}
+.background-image{
+  background-image: url(../images/page1.jpg);
+  background-size: cover;
+  height: 100%;
+  padding: 25% 15% 20%;
+}
+/* Flavour heading */
+.fla{
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1F4690;
+  background-color: hsla(0, 100%, 90%, 0.6);
+}
+.order-btn{
+  color: #fff;
+  background-color: red;
+  border: none ;
+  border-color: red;
+  padding: 1% 4%;
+  margin: 20px 40%;
+
+}
+.order-btn:hover{
+  color: #100F0F;
+  background-color: #5BB318;
+  text-align: center;
+}
+
+/* Rainbow Section */
+#rainbow{
+  font-family: 'Roboto', sans-serif;
+  background-color: #FFF89C;
+  padding: 3% 15%;
+}
+.rainbow-title{
+
+}
+.juice-flavour{
+  padding-top: 3%;
+}
+
+.flavour-text{
+
+  padding: 0 7% 5% 0;
+  text-align: justify;
+  line-height: 2;
+}
+.section-button{
+  color: #fff;
+  background-color: red;
+  border: none ;
+  border-color: red;
+  padding: 1.5% 10% 1.5%;
+
+}
+.section-button:hover{
+  color: #100F0F;
+  background-color: #5BB318;
+  text-align: center;
+}
+
+/* Health-care Section */
+#health-care{
+  font-family: 'Roboto', sans-serif;
+  background-color: #62FD7B;
+  padding: 5% 7%;
+}
+
+/* FDA Section */
+#fda{
+  background-color: #FFF89C;
+  font-family: 'Roboto', sans-serif;
+  padding: 5% 7%;
+}
+
+/* Facebook icon Section */
+#fb{
+  background-color: #0096FF;
+}
+.contact-number{
+  font-size: 1.7rem;
+  color: #fff;
+  text-align: center;
+  padding: 4% 5%;
+  margin-top: 3%;
+  ont-family: 'Roboto', sans-serif;
+}
+.social-icon{
+  margin-left: 30%;
+  margin:9% 40%;
+  color: #fff;
+}
+
+/* Feed Section */
+#feed{
+  background-color: #72FFFF;
+  padding: 5% 3% 5% 10%;
+}
+.feed-text{
+  ont-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  text-align: left;
+}
+.feed-paragrapgh{
+  line-height: 0.7;
+}
+.decorated-text{
+  text-decoration: underline;
+  color: #100F0F;
+}
+.decorated-text:hover{
+  color: #100F0F;
+}
+
+/* Footer section */
+#footer{
+  font-size: 0.7rem;
+  text-align: center;
+  line-height: 0.4;
+  color: #73777B;
+}
+.footer-img{
+  margin-bottom: 10px;
+  width: 100%;
+}
+.fixed-icon{
+  color: #0096FF;
+  margin: 0 10% 5% -83%;
+  position: fixed;
+  background-color: #fff;
+  border-radius: 100%;
+}

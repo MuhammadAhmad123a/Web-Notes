@@ -1,0 +1,26 @@
+body{
+  background-color:	#483D8B;
+  text-align: center;
+  color: #fff;
+  font-family: "swap", Arvo;
+}
+h1{
+  text-align: center;
+  /* color: #fff; */
+  font-size: 5rem;
+  padding-bottom: 5%;
+}
+
+.footer{
+  padding-top: 7%;
+}
+.drum{
+  padding: 2% 3%;
+  margin: 1%;
+  border-radius: 15%;
+  border: solid 10px;
+  border-color: #6A5ACD;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #C71585;
+}

@@ -1,0 +1,24 @@
+/***************************** TAG SELECTORS *********************************/
+
+body{
+  /*background-color: red;    //cpmments
+  */
+}
+h1{
+  color: red;
+  font-size: 100px;
+
+}
+/*
+img{
+  background-color: red;
+}
+*/
+
+/***************************** CLASS SELECTORS *********************************/
+.bacon{
+  background-color: green;
+}
+.broccoli{
+  background-color: red;
+}

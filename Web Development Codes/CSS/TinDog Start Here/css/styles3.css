@@ -1,0 +1,53 @@
+/************************ TAG SSELECTORS **********************/
+/* These are global tags because they change the whole body */
+h1{
+  font-family: "Montserrat-Black";
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+body{
+  font-family: "Monserrat";
+}
+
+
+
+
+
+
+/************************ CLASS SSELECTORS **********************/
+.container-fluid{
+  padding: 3% 15%;
+}
+/* Navigatioon Bar */
+.navbar{
+  padding: 0 0 4.5rem; /* 0 on top 0 on left and right and 4.5rem on bottom */
+}
+.navbar-brand{
+  font-family: "Ubuntu"; /* tindog t style changes */
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.nav-item{
+  padding: 0 18px;
+}
+.nav-link{
+  font-size: 1.2rem;
+  font-family: "Montserrat-Light";
+}
+
+/* Download Buttons */
+.download-button{
+  margin: 5% 3% 5% 0; /* top=5%, right=3%, bottom=5%, left=0 */
+}
+/* Title Image */
+.title-image{
+  width: 60%;
+  transform: rotate(25deg); /* Rotate image to style */
+}
+
+
+/************************ ID SSELECTORS ************************/
+#title{
+  background-color: #ff4c68;
+  color:#fff; /* white = #fff */
+}

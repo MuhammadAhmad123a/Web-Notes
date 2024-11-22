@@ -1,0 +1,39 @@
+
+body{
+  background-color: #696f69;
+  color: #7FFFD4;
+  font-family:"Mv-Boli", cursive;
+}
+h1{
+  padding: 5% 4% 5% 0;
+  text-align: center;
+  font-size: 5rem;
+}
+p{
+  text-align: center;
+  padding-top: 5%;
+  color: #fff;
+}
+.image1{
+  background-color: 	#8B0000;
+  width: 70%;
+  border-radius: 13%;
+  transform: rotate(90deg);
+  margin-left: 5%;
+}
+.image2{
+  background-color: 	#8B0000;
+  width: 70%;
+  border-radius: 13%;
+  transform: rotate(90deg);
+  margin-right: 5%;
+}
+.player1{
+  /* margin: 5% 3% 2% 5%; */
+  padding: 6% 3% 2% 10%;
+  margin-left: 5%;
+}
+.player2{
+  /* margin: 5% 3% 2% 5%; */
+  padding: 5% 3% 2% 10%;
+}
